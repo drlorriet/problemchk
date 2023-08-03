@@ -13,4 +13,8 @@ def testHello():
     output = "Hello Rick! I am delighted to meet you"
     check50.run("python3 bank.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
+def regex(amount):
+    """match amount, allowing for characters (not numbers) on either side"""
+    return fr'^[^\d]*{escape(amount)}[^\d]*$'
+
 
