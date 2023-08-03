@@ -11,6 +11,16 @@ def testRick():
     """ responds to input of \"Rick\" """
     check50.run("python3 helloplus.py").stdin("Rick").stdout("Rick").exit()
 
+@check50.check(exists)
+def testMargie():
+    """ responds to input of \"Margie\" """
+    check50.run("python3 helloplus.py").stdin("Margie").stdout("Margie").exit()
+
+@check50.check(exists)
+def testMargie():
+    """ output includes the class name python """
+    check50.run("python3 helloplus.py").stdin("Mary").stdout("python").exit()
+
 #@check50.check(exists)
 #def testHello():
 #    """input of \"Rick\" yields output of Hello Rick! I am delighted to meet you"""
