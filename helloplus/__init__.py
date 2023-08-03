@@ -3,7 +3,7 @@ from re import escape
 
 @check50.check()
 def exists():
-    """bank.py exists"""
+    """helloplus.py exists"""
     check50.exists("helloplus.py")
 
 @check50.check(exists)
@@ -13,8 +13,12 @@ def testHello():
     output = "Hello Rick! I am delighted to meet you"
     check50.run("python3 bank.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
-def regex(amount):
-    """match amount, allowing for characters (not numbers) on either side"""
-    return fr'^[^\d]*{escape(amount)}[^\d]*$'
+
+def regex(text):
+    """match case-sensitively with any characters preceding and only 1 period and whitespace after"""
+    return fr'^.*{escape(text)}\.?\s*$'
 
 
+#def regex(amount):
+#    """match amount, allowing for characters (not numbers) on either side"""
+#    return fr'^[^\d]*{escape(amount)}[^\d]*$'
