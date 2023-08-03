@@ -8,9 +8,9 @@ def exists():
 
 @check50.check(exists)
 def testHello():
-    """input of \"Hello\" yields output of $0"""
-    input = "Hello"
-    output = "$0"
+    """input of \"Rick\" yields output of Hello Rick! I am delighted to meet you"""
+    input = "Rick"
+    output = "Hello Rick! I am delighted to meet you"
     check50.run("python3 bank.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 
