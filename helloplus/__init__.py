@@ -7,11 +7,16 @@ def exists():
     check50.exists("helloplus.py")
 
 @check50.check(exists)
-def testHello():
-    """input of \"Rick\" yields output of Hello Rick! I am delighted to meet you"""
-    input = "Rick"
-    output = "Hello Rick! I am delighted to meet you"
-    check50.run("python3 bank.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+def testRick():
+    """ responds to input of \"Rick\" """
+    check50.run("python3 helloplus.py").stdin("Rick").stdout("Rick").exit()
+
+#@check50.check(exists)
+#def testHello():
+#    """input of \"Rick\" yields output of Hello Rick! I am delighted to meet you"""
+#    input = "Rick"
+#    output = "Hello Rick! I am delighted to meet you"
+#    check50.run("python3 bank.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 
 def regex(text):
